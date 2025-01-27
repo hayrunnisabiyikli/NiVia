@@ -113,7 +113,4 @@ async def weekly(request: Request):
     return templates.TemplateResponse(
         "weekly.html", 
         {"request": request}
-    )
-
-if __name__ == '__main__':
-    app.run(debug=True) 
+    ) 
