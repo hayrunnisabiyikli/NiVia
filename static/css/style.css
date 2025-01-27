@@ -1,0 +1,498 @@
+:root {
+    --primary-color: #1DB954;
+    --secondary-color: #191414;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --card-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1ed760;
+}
+
+/* Weekly Song Card */
+.weekly-song-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.song-info {
+    text-align: center;
+}
+
+.spotify-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.spotify-link:hover {
+    background-color: #1ed760;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+.song-list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.song-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.song-item h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.song-item p {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+#globe-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.world-map {
+    width: 100%;
+    height: 100%;
+    background-color: #001133;
+}
+
+.country {
+    cursor: pointer;
+    transition: all 0.3s;
+    stroke: #ffffff;
+    stroke-width: 0.2;
+}
+
+.country:hover {
+    filter: brightness(1.2);
+    stroke-width: 0.5;
+}
+
+.country-labels text {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    pointer-events: none;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.hover-info {
+    position: absolute;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+#country-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 1000;
+    min-width: 250px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+#country-info.hidden {
+    display: none;
+}
+
+#country-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.artist-description {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.artist-description p {
+    margin: 0.5rem 0;
+}
+
+.country.clickable {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.country.clickable:hover {
+    filter: brightness(1.3);
+    stroke-width: 0.8;
+}
+
+.country-label {
+    pointer-events: none;
+    text-shadow: 0 0 2px #000;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.quiz-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.options {
+    display: grid;
+    gap: 1rem;
+}
+
+.option-btn {
+    background: var(--background-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.option-btn:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.result-container {
+    text-align: center;
+}
+
+.result-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.result-container p {
+    margin-bottom: 1.5rem;
+}
+
+.feature-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quiz-section, .world-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.quiz-section h1, .world-section h1 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.quiz-section p, .world-section p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+#quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Test başlatma ekranı stilleri */
+#start-screen {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.start-button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.start-button:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+}
+
+.start-button i {
+    font-size: 1.4rem;
+}
+
+/* Test soruları stilleri */
+.question-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.question-number {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.options-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option-button {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--text-color);
+    display: block;
+}
+
+.option-button:hover {
+    border-color: var(--primary-color);
+    background: #f8f8f8;
+}
+
+.option-button.selected {
+    border-color: var(--primary-color);
+    background: #f0f9f0;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.question-number {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Sonuç ekranı stilleri */
+.results-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.playlist-recommendations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.playlist-card {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px);
+} 

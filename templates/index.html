@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NiVia - Müzik Öneri Sistemi</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-headphones"></i>
+                <span>NiVia</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="features">
+                <div class="feature-card mood">
+                    <a href="/mood" class="feature-link">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2>Ruh Haline Göre</h2>
+                        <p>Nasıl hissettiğini söyle, sana özel müzikler önerelim</p>
+                    </a>
+                </div>
+
+                <div class="feature-card world">
+                    <a href="/world" class="feature-link">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h2>Dünya Müzikleri</h2>
+                        <p>Farklı kültürlerden müzikleri keşfet</p>
+                    </a>
+                </div>
+
+                <div class="feature-card weekly">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h2>Haftanın Şarkısı</h2>
+                    <div id="song-of-day"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-headphones"></i>
+                <span>NiVia</span>
+            </div>
+            <p>&copy; 2024 NiVia</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/mood.js"></script>
+    <script src="/static/js/world.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/daily.js"></script>
+    <script>
+        const weeklySong = new WeeklySong();
+    </script>
+</body>
+</html> 

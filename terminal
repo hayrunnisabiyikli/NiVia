@@ -1,0 +1,21 @@
+# 1. Proje klasörünü oluştur
+mkdir music-recommendation-system
+cd music-recommendation-system
+
+# 2. Virtual environment oluştur
+python -m venv venv
+
+# 3. Virtual environment'ı aktif et
+# Windows için:
+venv\Scripts\activate
+# Linux/Mac için:
+# source venv/bin/activate
+
+# 4. Flask'ı yükle
+pip install flask
+
+# 5. Önce gerekli paketleri yükleyelim
+pip install fastapi uvicorn jinja2
+
+# 6. Uygulamayı çalıştır
+uvicorn app:app --reload

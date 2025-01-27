@@ -1,0 +1,12 @@
+music-recommendation-system/
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   ├── main.js
+│   │   └── world.js
+│   └── images/
+│       └── earth_texture.jpg
+├── templates/
+│   └── index.html
+└── app.py 

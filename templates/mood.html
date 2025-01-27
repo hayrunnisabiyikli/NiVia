@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruh Hali Testi - NiVia</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/" class="home-link">
+                    <i class="fas fa-headphones"></i>
+                    <span>NiVia</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="quiz-section">
+                <h1>Ruh Hali Testi</h1>
+                <p>Sana en uygun müzikleri bulmak için birkaç soru soracağız</p>
+                
+                <!-- Test başlatma ekranı -->
+                <div id="start-screen">
+                    <button id="startQuiz" class="start-button">
+                        <i class="fas fa-play"></i>
+                        Teste Başla
+                    </button>
+                </div>
+
+                <!-- Test soruları buraya gelecek -->
+                <div id="quiz-container" class="hidden"></div>
+
+                <!-- Sonuçlar buraya gelecek -->
+                <div id="results-container" class="hidden"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-headphones"></i>
+                <span>NiVia</span>
+            </div>
+            <p>&copy; 2024 NiVia</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/mood.js"></script>
+</body>
+</html> 
